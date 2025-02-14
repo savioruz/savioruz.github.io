@@ -6,7 +6,7 @@
 </script>
 
 <footer
-	class="flex flex-col items-center justify-center gap-4 border-t bg-background/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+	class="flex flex-col items-center justify-center gap-4 mb-16 md:mb-0 border-t bg-background/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
 	<div class="flex flex-row gap-4">
 		<a
