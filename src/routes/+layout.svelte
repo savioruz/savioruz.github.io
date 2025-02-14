@@ -4,8 +4,12 @@
 	import { siteConfig } from '$lib/metadata';
 	import { page } from '$app/stores';
 	import NotFound from '$lib/components/widgets/not-found.svelte';
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
 	let { children } = $props();
+	
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
 </script>
 
 <svelte:head>
