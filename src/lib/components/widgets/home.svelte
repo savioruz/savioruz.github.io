@@ -19,10 +19,10 @@
 	<div class="flex flex-col items-center justify-center gap-8">
 		<ProjectSection title="Featured Projects" projects={data.featuredProjects} {isLoaded} />
 		<a
-			href="/projects" 
-			class="text-sm text-gray-500 animated-underline hover:text-primary"
-			data-sveltekit-preload-data
-		>View All Projects</a>
+			href="/projects"
+			class="animated-underline text-sm text-gray-500 hover:text-primary"
+			data-sveltekit-preload-data>View All Projects</a
+		>
 	</div>
 	<ReachMe />
 </Root>

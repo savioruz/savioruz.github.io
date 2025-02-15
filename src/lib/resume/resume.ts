@@ -10,6 +10,7 @@ export interface Resume {
 	about: string;
 	summary: string;
 	url: string;
+	other: string;
 	experience: Experience[];
 	education: Education[];
 	skills: string[];
@@ -57,32 +58,49 @@ export const resume: Resume = {
     My experience includes integrating payment gateways, containerized deployments with Docker, and cloud-based solutions.
     I thrive on solving complex problems, writing clean and maintainable code, and collaborating with teams to create impactful software.
     `,
+	other: `I like to learn new things and share my knowledge to others. I'm a fast learner and I'm always eager to take on new challenges.
+	I like blue color and I like travelling. My favorite food is Nasi Padang. I'm a big fan of "Stranger Things" and "Money Heist". I also like to play Valorant. I like to watch anime and read manga. My favorite anime/manga is "One Piece" and "Dragon Ball".
+	`,
 	summary:
 		'Backend-focused software engineer with a passion for building scalable and efficient systems. Experienced in designing and implementing robust server-side architectures, APIs, and database solutions.',
 	url: 'https://s.id/resume-kheril',
 	experience: [
 		{
-			company: 'Example Company',
-			position: 'Software Engineer',
-			location: 'San Francisco, CA',
-			startDate: '2020-01-01',
-			endDate: '2024-01-01'
+			company: 'BSI UAD - Biro Sistem Informasi UAD',
+			position: 'Backend Developer (Intern)',
+			location: 'Yogyakarta, Indonesia',
+			startDate: 'Dec 2024',
+			endDate: 'Present'
 		},
 		{
-			company: 'Example Company',
-			position: 'Software Engineer',
-			location: 'San Francisco, CA',
-			startDate: '2020-01-01',
-			endDate: '2024-01-01'
+			company: 'MIKTI - Masyarakat Industri Kreatif Teknologi Informasi dan Komunikasi Indonesia',
+			position: 'Golang Developer - AI & Computer Vision (Apprenticeship)',
+			location: 'Yogyakarta, Indonesia',
+			startDate: 'Sep 2024',
+			endDate: 'Dec 2024'
+		},
+		{
+			company: 'Poseidon Network',
+			position: 'Community Assistant',
+			location: 'Remote',
+			startDate: 'June 2020',
+			endDate: 'Dec 2020'
+		},
+		{
+			company: 'UPT Laboratorium Kesehatan',
+			position: 'Laboratory Analyst',
+			location: 'Magelang, Indonesia',
+			startDate: 'Feb 2019',
+			endDate: 'Apr 2019'
 		}
 	],
 	education: [
 		{
-			school: 'Example School',
+			school: 'Ahmad Dahlan University',
 			degree: 'Bachelor of Science in Computer Science',
-			location: 'San Francisco, CA',
-			startDate: '2020-01-01',
-			endDate: '2024-01-01'
+			location: 'Yogyakarta, Indonesia',
+			startDate: 'Sep 2022',
+			endDate: 'Present'
 		}
 	],
 	skills: [

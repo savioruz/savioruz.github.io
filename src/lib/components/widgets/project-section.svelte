@@ -3,32 +3,31 @@
 	import WordsPullUp from '$lib/components/ui/words-pull-up/words-pull-up.svelte';
 	import ProjectCard from '$lib/components/ui/project-card/project-card.svelte';
 	import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
-    import { cn } from '$lib/utils';
-    import { page } from '$app/stores';
-	
+	import { cn } from '$lib/utils';
+	import { page } from '$app/stores';
+
 	export let title: string;
 	export let projects: Project[];
 	export let isLoaded: boolean;
-    let id = title.toLowerCase().replace(/\s+/g, '-');
+	let id = title.toLowerCase().replace(/\s+/g, '-');
 
-    $: isProjectsPage = $page.url.pathname === '/projects';
-    $: sectionDescription = title === 'Featured Projects' 
-        ? 'My most recent projects' 
-        : 'My older projects';
+	$: isProjectsPage = $page.url.pathname === '/projects';
+	$: sectionDescription =
+		title === 'Featured Projects' ? 'My most recent projects' : 'My older projects';
 </script>
 
-<section id={id} class="flex flex-col items-start justify-center gap-8">
+<section {id} class="flex flex-col items-start justify-center gap-8">
 	<div class="flex flex-col items-start justify-center gap-1">
-        <WordsPullUp words={title} class={cn(
-            "text-3xl font-bold",
-            {
-                "text-gradient": isProjectsPage
-            }
-        )} />
-        {#if isProjectsPage}
-            <p class="text-md text-muted-foreground">{sectionDescription}</p>
-        {/if}
-    </div>
+		<WordsPullUp
+			words={title}
+			class={cn('text-3xl font-bold', {
+				'text-gradient': isProjectsPage
+			})}
+		/>
+		{#if isProjectsPage}
+			<p class="text-md text-muted-foreground">{sectionDescription}</p>
+		{/if}
+	</div>
 	<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
 		{#if isLoaded}
 			{#each projects as project}
