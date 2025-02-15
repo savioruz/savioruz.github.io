@@ -1,11 +1,18 @@
 import type { Resume } from './resume';
 
+const hashCache = new Map<string, number>();
+
 function getImage(name: string) {
+	if (hashCache.has(name)) {
+		return `https://opengraph.githubassets.com/${hashCache.get(name)}/savioruz/${name}`;
+	}
+
 	const generateHash = (name: string) => {
-		return name.split('').reduce((acc, char) => {
-			return acc + char.charCodeAt(0);
-		}, 0);
+		const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+		hashCache.set(name, hash);
+		return hash;
 	};
+
 	return `https://opengraph.githubassets.com/${generateHash(name)}/savioruz/${name}`;
 }
 
