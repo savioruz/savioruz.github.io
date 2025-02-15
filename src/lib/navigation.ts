@@ -9,6 +9,10 @@ export const navigationConfig: NavItem[] = [
 		label: 'Home'
 	},
 	{
+		href: '/projects',
+		label: 'Projects'
+	},
+	{
 		href: '/ask',
 		label: 'Ask Me'
 	},

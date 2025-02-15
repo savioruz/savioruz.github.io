@@ -1,4 +1,4 @@
-import { projects } from './projects';
+import { featuredProjects, pastProjects } from './projects';
 
 export interface Resume {
 	name: string;
@@ -13,7 +13,8 @@ export interface Resume {
 	experience: Experience[];
 	education: Education[];
 	skills: string[];
-	projects: Project[];
+	featuredProjects: Project[];
+	pastProjects: Project[];
 }
 
 interface Experience {
@@ -32,7 +33,7 @@ interface Education {
 	endDate: string;
 }
 
-interface Project {
+export interface Project {
 	name: string;
 	description: string;
 	tags: string[];
@@ -103,5 +104,6 @@ export const resume: Resume = {
 		'Git',
 		'Linux'
 	],
-	projects: [...projects]
+	featuredProjects: featuredProjects,
+	pastProjects: pastProjects
 };
