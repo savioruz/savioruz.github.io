@@ -56,7 +56,7 @@ export const featuredProjects: Resume['featuredProjects'] = [
 		url: 'https://github.com/savioruz/mikti-task',
 		image: getImage('mikti-task'),
 		href: 'https://github.com/savioruz/mikti-task'
-	},
+	}
 ];
 
 export const pastProjects: Resume['pastProjects'] = [
@@ -124,8 +124,8 @@ export const pastProjects: Resume['pastProjects'] = [
 		name: 'zerowrt',
 		description: 'A project related to OpenWRT customization and networking.',
 		tags: ['Networking', 'OpenWRT', 'Linux'],
-		startDate: "Mar 2021",
-		endDate: "present",
+		startDate: 'Mar 2021',
+		endDate: 'present',
 		url: 'https://github.com/savioruz/zerowrt',
 		image: 'https://raw.githubusercontent.com/jakues/zerowrt/master/images/zerowrt.png',
 		href: 'https://github.com/savioruz/zerowrt'
@@ -134,10 +134,10 @@ export const pastProjects: Resume['pastProjects'] = [
 		name: 'ql',
 		description: 'Query language tool for structured data processing.',
 		tags: ['Shell', 'Bash', 'CLI'],
-		startDate: "Jul 2021",
-		endDate: "Sep 2021",
+		startDate: 'Jul 2021',
+		endDate: 'Sep 2021',
 		url: 'https://github.com/savioruz/ql',
 		image: getImage('ql'),
 		href: 'https://github.com/savioruz/ql'
-	},
+	}
 ];

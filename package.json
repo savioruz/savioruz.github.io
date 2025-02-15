@@ -48,6 +48,7 @@
 		"cors": "^2.8.5",
 		"i": "^0.3.7",
 		"lucide-svelte": "^0.475.0",
+		"marked": "^15.0.7",
 		"mode-watcher": "^0.5.1",
 		"svelte-motion": "^0.12.2"
 	}

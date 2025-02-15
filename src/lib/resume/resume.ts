@@ -80,18 +80,18 @@ export const resume: Resume = {
 			endDate: 'Dec 2024'
 		},
 		{
-			company: "Poseidon Network",
-			position: "Community Assistant",
-			location: "Remote",
-			startDate: "June 2020",
-			endDate: "Dec 2020"
+			company: 'Poseidon Network',
+			position: 'Community Assistant',
+			location: 'Remote',
+			startDate: 'June 2020',
+			endDate: 'Dec 2020'
 		},
 		{
-			company: "UPT Laboratorium Kesehatan",
-			position: "Laboratory Analyst",
-			location: "Magelang, Indonesia",
-			startDate: "Feb 2019",
-			endDate: "Apr 2019"
+			company: 'UPT Laboratorium Kesehatan',
+			position: 'Laboratory Analyst',
+			location: 'Magelang, Indonesia',
+			startDate: 'Feb 2019',
+			endDate: 'Apr 2019'
 		}
 	],
 	education: [

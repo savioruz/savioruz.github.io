@@ -6,6 +6,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 	import { onMount } from 'svelte';
+	import { marked } from 'marked';
 
 	let userInput = '';
 	let isLoading = false;
@@ -85,7 +86,9 @@
 										? 'bg-primary text-primary-foreground'
 										: 'bg-muted'}"
 								>
-									<p class="text-md">{message.content}</p>
+									<p class="text-md prose prose-invert prose-p:my-0 prose-ul:my-0 prose-li:my-0">
+										{@html marked(message.content)}
+									</p>
 								</div>
 							</div>
 						{/each}
@@ -120,11 +123,11 @@
 				<Skeleton class="h-12 w-1/2" />
 				<Skeleton class="ml-auto h-12 w-2/3" />
 				<Skeleton class="h-36 w-3/4" />
-                <Skeleton class="h-12 w-1/2" />
-                <div class="mt-32 flex w-full gap-4">
-                    <Skeleton class="h-10 flex-1 rounded-full" />
-                    <Skeleton class="h-10 w-20" />
-                </div>
+				<Skeleton class="h-12 w-1/2" />
+				<div class="mt-32 flex w-full gap-4">
+					<Skeleton class="h-10 flex-1 rounded-full" />
+					<Skeleton class="h-10 w-20" />
+				</div>
 			</div>
 		</section>
 	{/if}

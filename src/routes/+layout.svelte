@@ -9,7 +9,7 @@
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
 	let { children } = $props();
-	
+
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	injectSpeedInsights();
 </script>
@@ -19,7 +19,7 @@
 	<meta name="description" content={siteConfig.description} />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta charset="utf-8" />
-	
+
 	<meta name="keywords" content={siteConfig.keywords} />
 	<meta name="author" content={siteConfig.name} />
 
