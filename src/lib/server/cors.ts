@@ -1,44 +1,53 @@
+import { dev } from '$app/environment';
+import cors from 'cors';
 import { siteConfig } from '$lib/metadata';
 
-type CorsConfig = {
-    origin: string[];
-    methods: string[];
-    credentials: boolean;
-    maxAge?: number;
-};
+const allowedOrigins = dev ? 'http://localhost:5173' : siteConfig.url.toString();
 
-export const corsConfig: CorsConfig = {
-    origin: [siteConfig.url.toString()],
+const corsMiddleware = cors({
+    origin: (origin, callback) => {
+        if (!origin || origin === allowedOrigins) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
-    maxAge: 3600
-};
+    maxAge: 3600,
+    optionsSuccessStatus: 200
+});
 
-export function setCorsHeaders(response: Response): Response {
-    const headers = new Headers(response.headers);
-    
-    const origin = headers.get('Origin');
-    if (origin) {
-        if (corsConfig.origin.includes(origin)) {
-            headers.set('Access-Control-Allow-Origin', origin);
-        } else {
-            return new Response('Origin not allowed', { 
-                status: 403,
-                statusText: 'Forbidden'
-            });
-        }
-    }
+export function applyCors(request: Request, response: Response): Promise<Response> {
+    return new Promise((resolve, reject) => {
+        const nodeReq = {
+            method: request.method,
+            headers: Object.fromEntries(request.headers.entries()),
+        };
 
-    headers.set('Access-Control-Allow-Methods', corsConfig.methods.join(', '));
-    headers.set('Access-Control-Allow-Credentials', String(corsConfig.credentials));
-    
-    if (corsConfig.maxAge) {
-        headers.set('Access-Control-Max-Age', String(corsConfig.maxAge));
-    }
+        const nodeRes = {
+            getHeader: (name: string) => null,
+            setHeader: (name: string, value: string) => {
+                response = new Response(response.body, {
+                    status: response.status,
+                    headers: new Headers({
+                        ...Object.fromEntries(response.headers.entries()),
+                        [name]: value,
+                    }),
+                });
+            },
+            statusCode: response.status,
+        };
 
-    return new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers
+        corsMiddleware(nodeReq as any, nodeRes as any, (err: Error) => {
+            if (err) {
+                resolve(new Response('Origin not allowed', { 
+                    status: 403,
+                    statusText: 'Forbidden'
+                }));
+            } else {
+                resolve(response);
+            }
+        });
     });
 }

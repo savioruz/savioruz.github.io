@@ -4,7 +4,7 @@ import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { resume as data } from '$lib/resume/resume';
 import { RateLimit } from '$lib/server/rate-limit';
-import { setCorsHeaders } from '$lib/server/cors';
+import { applyCors } from '$lib/server/cors';
 
 const rateLimiter = new RateLimit({
     windowMs: 60000,
@@ -39,7 +39,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
                 { error: 'Too many requests. Please try again later.' },
                 { status: 429 }
             );
-            return setCorsHeaders(response);
+            return await applyCors(request, response);
         }
 
         const body = await request.json().catch(() => ({}));
@@ -48,7 +48,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
                 { error: 'Invalid request body' },
                 { status: 400 }
             );
-            return setCorsHeaders(response);
+            return await applyCors(request, response);
         }
 
         const message = validateMessage(body.message);
@@ -91,9 +91,10 @@ Past Projects: ${data.pastProjects.map(project => `${project.name} - ${project.d
         const result = await model.generateContent(prompt);
         const response = await result.response;
         
-        return setCorsHeaders(json({ 
-            response: response.text() 
-        }));
+        return await applyCors(
+            request,
+            json({ response: response.text() })
+        );
 
     } catch (error) {
         console.error('Error:', error);
@@ -104,7 +105,7 @@ Past Projects: ${data.pastProjects.map(project => `${project.name} - ${project.d
                     { error: error.message },
                     { status: 400 }
                 );
-                return setCorsHeaders(response);
+                return await applyCors(request, response);
             }
         }
 
@@ -112,6 +113,6 @@ Past Projects: ${data.pastProjects.map(project => `${project.name} - ${project.d
             { error: 'An unexpected error occurred' },
             { status: 500 }
         );
-        return setCorsHeaders(response);
+        return await applyCors(request, response);
     }
 };
