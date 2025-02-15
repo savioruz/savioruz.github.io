@@ -1,8 +1,7 @@
-import { dev } from '$app/environment';
 import cors from 'cors';
 import { siteConfig } from '$lib/metadata';
 
-const allowedOrigins = dev ? 'http://localhost:5173' : siteConfig.url.toString();
+const allowedOrigins = siteConfig.url.origin;
 
 const corsMiddleware = cors({
 	origin: (origin, callback) => {
