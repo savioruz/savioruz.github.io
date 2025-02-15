@@ -20,6 +20,7 @@
 						item.href
 							? 'text-gradient'
 							: ''}"
+						data-sveltekit-preload-data
 					>
 						{item.label}
 					</a>
