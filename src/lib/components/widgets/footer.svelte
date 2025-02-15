@@ -13,12 +13,12 @@
 			href="https://github.com/savioruz/savioruz.github.io"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="animated-underline text-sm text-muted-foreground"
+			class="animated-underline text-sm text-muted-foreground hover:text-primary"
 		>
 			Source Code
 		</a>
-		<a href="/pallete" class="animated-underline text-sm text-muted-foreground"> Pallete </a>
-		<a href="/stats" class="animated-underline text-sm text-muted-foreground"> Stats </a>
+		<a href="/pallete" class="animated-underline text-sm text-muted-foreground hover:text-primary" data-sveltekit-preload-data> Pallete </a>
+		<a href="/stats" class="animated-underline text-sm text-muted-foreground hover:text-primary" data-sveltekit-preload-data> Stats </a>
 	</div>
 	<p class="text-sm text-muted-foreground">
 		&copy; {year}
