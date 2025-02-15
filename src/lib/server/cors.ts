@@ -18,8 +18,15 @@ export function setCorsHeaders(response: Response): Response {
     const headers = new Headers(response.headers);
     
     const origin = headers.get('Origin');
-    if (origin && corsConfig.origin.includes(origin)) {
-        headers.set('Access-Control-Allow-Origin', origin);
+    if (origin) {
+        if (corsConfig.origin.includes(origin)) {
+            headers.set('Access-Control-Allow-Origin', origin);
+        } else {
+            return new Response('Origin not allowed', { 
+                status: 403,
+                statusText: 'Forbidden'
+            });
+        }
     }
 
     headers.set('Access-Control-Allow-Methods', corsConfig.methods.join(', '));
