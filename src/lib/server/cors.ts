@@ -1,4 +1,3 @@
-import { dev } from '$app/environment';
 import { siteConfig } from '$lib/metadata';
 
 type CorsConfig = {
@@ -9,7 +8,7 @@ type CorsConfig = {
 };
 
 export const corsConfig: CorsConfig = {
-    origin: dev ? ['http://localhost:5173', 'http://localhost:4173'] : [siteConfig.url.toString()],
+    origin: [siteConfig.url.toString()],
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
     maxAge: 3600
