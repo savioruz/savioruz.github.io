@@ -28,14 +28,14 @@ export const featuredProjects: Resume['featuredProjects'] = [
 		href: 'https://github.com/savioruz/TrinityKnights.Backend'
 	},
 	{
-		name: 'simeru-scraper',
+		name: 'smrv2-api',
 		description: 'A web scraper built to collect Simeru data.',
-		tags: ['Go', 'Web Scraping', 'Chromedp'],
+		tags: ['Go', 'RabbitMQ', 'PostgreSQL', 'Redis', 'Web Scraping', 'Chromedp'],
 		startDate: 'Sep 2024',
 		endDate: 'present',
-		url: 'https://github.com/savioruz/simeru-scraper',
-		image: 'https://github.com/savioruz/simeru-scraper/raw/main/assets/preview.png',
-		href: 'https://github.com/savioruz/simeru-scraper'
+		url: 'https://github.com/savioruz/smrv2-api',
+		image: 'https://github.com/savioruz/smrv2-api/raw/main/assets/preview.png',
+		href: 'https://github.com/savioruz/smrv2-api'
 	},
 	{
 		name: 'roastgithub-api',
@@ -52,7 +52,7 @@ export const featuredProjects: Resume['featuredProjects'] = [
 		description: 'A simple Todo App built for MIKTI Batch 7 using Go.',
 		tags: ['Go', 'PostgreSQL', 'Redis', 'REST API', 'GraphQL', 'Docker', 'Unit Testing', 'CI/CD'],
 		startDate: 'Sep 2024',
-		endDate: 'present',
+		endDate: 'Dec 2024',
 		url: 'https://github.com/savioruz/mikti-task',
 		image: getImage('mikti-task'),
 		href: 'https://github.com/savioruz/mikti-task'
@@ -61,11 +61,11 @@ export const featuredProjects: Resume['featuredProjects'] = [
 
 export const pastProjects: Resume['pastProjects'] = [
 	{
-		name: 'Smrv2',
+		name: 'smrv2',
 		description: 'A rework of the original Simeru website, built using Astro and React.',
-		tags: ['TypeScript', 'Astro', 'React', 'JavaScript', 'CSS'],
-		startDate: 'Jan 2024',
-		endDate: 'Dec 2024',
+		tags: ['TypeScript', 'Svelte', 'JavaScript', 'TailwindCSS'],
+		startDate: 'Sep 2024',
+		endDate: 'present',
 		url: 'https://github.com/savioruz/Smrv2',
 		image: 'https://simeru.vercel.app/opengraph.png',
 		href: 'https://simeru.vercel.app'
