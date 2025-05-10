@@ -49,7 +49,7 @@
 		"i": "^0.3.7",
 		"lucide-svelte": "^0.485.0",
 		"marked": "^15.0.7",
-		"mode-watcher": "^0.5.1",
+		"mode-watcher": "^1.0.0",
 		"svelte-motion": "^0.12.2"
 	}
 }
