@@ -47,7 +47,7 @@
 		"@vercel/speed-insights": "^1.2.0",
 		"cors": "^2.8.5",
 		"i": "^0.3.7",
-		"lucide-svelte": "^0.534.0",
+		"lucide-svelte": "^0.541.0",
 		"marked": "^16.0.0",
 		"mode-watcher": "^1.0.0",
 		"svelte-motion": "^0.12.2"
