@@ -1,108 +1,97 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
 
-@layer base {
-	:root {
-		--background: 0 0% 100%;
-		--foreground: 222.2 84% 4.9%;
-		--muted: 210 40% 96.1%;
-		--muted-foreground: 215.4 16.3% 46.9%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 84% 4.9%;
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 84% 4.9%;
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
-		--secondary: 210 40% 96.1%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
-		--accent: 210 40% 96.1%;
-		--accent-foreground: 222.2 47.4% 11.2%;
-		--destructive: 0 72.2% 50.6%;
-		--destructive-foreground: 210 40% 98%;
-		--ring: 222.2 84% 4.9%;
-		--radius: 0.5rem;
-		--sidebar-background: 0 0% 98%;
-		--sidebar-foreground: 240 5.3% 26.1%;
-		--sidebar-primary: 240 5.9% 10%;
-		--sidebar-primary-foreground: 0 0% 98%;
-		--sidebar-accent: 240 4.8% 95.9%;
-		--sidebar-accent-foreground: 240 5.9% 10%;
-		--sidebar-border: 220 13% 91%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
-	}
+@theme {
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-display: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-	.dark {
-		--background: 222.2 84% 4.9%;
-		--foreground: 210 40% 98%;
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 11.2%;
-		--secondary: 217.2 32.6% 17.5%;
-		--secondary-foreground: 210 40% 98%;
-		--accent: 217.2 32.6% 17.5%;
-		--accent-foreground: 210 40% 98%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 210 40% 98%;
-		--ring: 212.7 26.8% 83.9%;
-		--sidebar-background: 240 5.9% 10%;
-		--sidebar-foreground: 240 4.8% 95.9%;
-		--sidebar-primary: 224.3 76.3% 48%;
-		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 240 3.7% 15.9%;
-		--sidebar-accent-foreground: 240 4.8% 95.9%;
-		--sidebar-border: 240 3.7% 15.9%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
-	}
+	/* Signature accent surfaces (full-bleed bands only, not wired into semantic tokens) */
+	--color-signature-coral: #aa2d00;
+	--color-signature-coral-foreground: #ffffff;
+	--color-signature-forest: #0a2e0e;
+	--color-signature-forest-foreground: #ffffff;
+	--color-signature-navy: #181d26;
+	--color-signature-navy-foreground: #ffffff;
+	--color-signature-cream: #f5e9d4;
+	--color-signature-cream-foreground: #181d26;
+}
+
+:root {
+	--background: #ffffff;
+	--foreground: #181d26;
+	--card: #ffffff;
+	--card-foreground: #181d26;
+	--popover: #ffffff;
+	--popover-foreground: #181d26;
+	--primary: #181d26;
+	--primary-foreground: #ffffff;
+	--secondary: #f5f4f1;
+	--secondary-foreground: #181d26;
+	--muted: #f5f4f1;
+	--muted-foreground: #5b6168;
+	--accent: #f5e9d4;
+	--accent-foreground: #181d26;
+	--destructive: #aa2d00;
+	--destructive-foreground: #ffffff;
+	--border: #e6e4df;
+	--input: #e6e4df;
+	--ring: #181d26;
+	--radius: 0.75rem;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
 }
 
 @layer base {
-	* {
-		@apply border-border;
+	*,
+	::after,
+	::before {
+		border-color: var(--color-border);
 	}
+
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground font-sans antialiased;
 	}
 }
 
-.text-gradient {
-	@apply bg-gradient-text bg-clip-text text-transparent;
-}
-
-.text-gradient-hover {
-	@apply hover:bg-gradient-text hover:bg-clip-text hover:text-transparent;
-}
-
-.smooth-transition {
-	@apply transition-all duration-300 ease-in-out;
-}
-
-.animated-underline {
-	background-size: 0 2px;
-	background-position: 0 100%;
-
-	@apply bg-gradient-to-r from-purple to-pink bg-no-repeat pb-0.5 no-underline outline-none transition-all duration-300;
-
-	&.with-dots {
-		@apply border-b border-dotted border-foreground;
-	}
-
-	&:hover,
-	&:focus-visible,
-	&:has(+ div:hover) {
-		background-size: 100% 2px;
-
-		&.with-dots {
-			@apply border-transparent;
+/* Single shared entrance animation, opt-in via .fade-up, motion-safe only. */
+@media (prefers-reduced-motion: no-preference) {
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
 		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.fade-up {
+		animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 	}
 }

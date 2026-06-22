@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '../app.css';
-	import { ModeWatcher } from 'mode-watcher';
 	import { siteConfig } from '$lib/metadata';
 	import { page } from '$app/stores';
 	import NotFound from '$lib/components/widgets/not-found.svelte';
@@ -47,8 +46,6 @@
 	<meta name="google-site-verification" content={siteConfig.googleVerification} />
 	<meta name="yandex-verification" content={siteConfig.yandexVerification} />
 </svelte:head>
-
-<ModeWatcher />
 
 {#if $page.error?.message}
 	<NotFound status={$page.status} message={$page.error.message} />

@@ -1,22 +1,20 @@
 <script lang="ts">
-	import LetterPullUp from '$lib/components/ui/letter-pull-up/letter-pull-up.svelte';
-
 	const { status, message } = $props();
 </script>
 
-<div class="container flex min-h-[calc(100vh-4rem)] items-center justify-center">
-	<div class="space-y-8 text-center">
-		<div class="flex flex-col items-center justify-center gap-2">
-			<h1 class="text-gradient text-8xl font-bold">
-				{status}
-			</h1>
-			<LetterPullUp
-				words={message === 'Not Found'
-					? "I'm sorry, but the page you're looking for doesn't exist."
-					: "I'm sorry, but something went wrong."}
-				class="text-md font-bold"
-			/>
-		</div>
-		<a href="/" class="animated-underline inline-block text-lg">&larr; Go back home</a>
+<div class="flex min-h-dvh items-center justify-center px-6">
+	<div class="flex flex-col items-center gap-6 text-center">
+		<p class="font-display text-7xl font-medium tracking-tight md:text-8xl">{status}</p>
+		<p class="text-muted-foreground max-w-md text-lg">
+			{message === 'Not Found'
+				? "The page you're looking for doesn't exist."
+				: 'Something went wrong.'}
+		</p>
+		<a
+			href="/"
+			class="text-foreground decoration-muted-foreground/40 underline-offset-4 hover:underline"
+		>
+			&larr; Back home
+		</a>
 	</div>
 </div>
