@@ -2,8 +2,8 @@
 	import '../app.css';
 	import { siteConfig } from '$lib/metadata';
 	import { page } from '$app/stores';
-	import NotFound from '$lib/components/widgets/not-found.svelte';
 	import { dev } from '$app/environment';
+	import NotFound from '$lib/components/widgets/not-found.svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
