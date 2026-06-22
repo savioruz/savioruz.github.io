@@ -1,9 +1,13 @@
 <script lang="ts">
-	import Navbar from '@/components/ui/navbar/navbar.svelte';
-	import Home from '@/components/widgets/home.svelte';
-	import Footer from '@/components/widgets/footer.svelte';
+	import Hero from '$lib/components/widgets/hero.svelte';
+	import Projects from '$lib/components/widgets/projects.svelte';
+	import Contact from '$lib/components/widgets/contact.svelte';
+	import Footer from '$lib/components/widgets/footer.svelte';
 </script>
 
-<Navbar />
-<Home />
+<main>
+	<Hero />
+	<Projects />
+	<Contact />
+</main>
 <Footer />
