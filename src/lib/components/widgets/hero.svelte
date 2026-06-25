@@ -2,10 +2,12 @@
 	import { resume as data } from '$lib/resume/resume';
 	import { Section } from '$lib/components/ui/section';
 	import { Button } from '$lib/components/ui/button';
-	import { FileText, Linkedin, Github } from 'lucide-svelte';
+	import Document from 'carbon-icons-svelte/lib/Document.svelte';
+	import LogoLinkedin from 'carbon-icons-svelte/lib/LogoLinkedin.svelte';
+	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
 </script>
 
-<Section id="hero">
+<Section id="hero" tone="canvas">
 	<div class="fade-up flex flex-col items-start gap-6">
 		<p class="text-muted-foreground text-base">Hi, I'm</p>
 		<h1 class="font-display text-4xl leading-tight font-medium tracking-tight md:text-6xl">
@@ -16,15 +18,15 @@
 		</p>
 		<div class="mt-2 flex flex-wrap items-center gap-3">
 			<Button href={data.url} target="_blank" rel="noopener noreferrer">
-				<FileText />
+				<Document />
 				Resume
 			</Button>
 			<Button href={data.linkedin} target="_blank" rel="noopener noreferrer" variant="outline">
-				<Linkedin />
+				<LogoLinkedin />
 				LinkedIn
 			</Button>
 			<Button href={data.github} target="_blank" rel="noopener noreferrer" variant="outline">
-				<Github />
+				<LogoGithub />
 				GitHub
 			</Button>
 		</div>
