@@ -1,10 +1,21 @@
 import { projects } from './projects';
+import { experience } from './experience';
 
 export interface Project {
 	name: string;
 	description: string;
 	tags: string[];
 	href: string;
+}
+
+export interface Experience {
+	company: string;
+	role: string;
+	type?: string;
+	location: string;
+	period: string;
+	description: string;
+	tags?: string[];
 }
 
 export interface Resume {
@@ -16,6 +27,7 @@ export interface Resume {
 	url: string;
 	summary: string;
 	projects: Project[];
+	experience: Experience[];
 }
 
 export const resume: Resume = {
@@ -23,9 +35,10 @@ export const resume: Resume = {
 	email: 'kheril.dev@gmail.com',
 	linkedin: 'https://www.linkedin.com/in/savioruz',
 	github: 'https://github.com/savioruz',
-	twitter: 'https://x.com/savioruz',
+	twitter: 'https://x.com/rill_blastmith',
 	url: 'https://s.id/resume-kheril',
 	summary:
-		'Backend-focused software engineer with a passion for building scalable and efficient systems. Experienced in designing and implementing robust server-side architectures, APIs, and database solutions.',
-	projects
+		"I mostly write Go, building APIs and the services behind them. When I'm not working, I'm usually messing with side projects or poking around Web3.",
+	projects,
+	experience
 };

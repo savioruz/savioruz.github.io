@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resume as data } from '$lib/resume/resume';
 	import { Section } from '$lib/components/ui/section';
-	import { ArrowUpRight } from 'lucide-svelte';
+	import ArrowUpRight from 'carbon-icons-svelte/lib/ArrowUpRight.svelte';
 
 	const projects = data.projects;
 </script>

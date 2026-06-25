@@ -2,10 +2,10 @@
 	import { resume as data } from '$lib/resume/resume';
 	import { Section } from '$lib/components/ui/section';
 	import { Button } from '$lib/components/ui/button';
-	import { Mail } from 'lucide-svelte';
+	import Email from 'carbon-icons-svelte/lib/Email.svelte';
 </script>
 
-<Section id="contact" tone="coral">
+<Section id="contact" tone="cream">
 	<div class="flex flex-col items-start gap-6">
 		<h2 class="font-display text-3xl font-medium tracking-tight md:text-5xl">
 			Let's work together
@@ -15,7 +15,7 @@
 			a line and I'll get back to you.
 		</p>
 		<Button href={`mailto:${data.email}`} variant="inverse" class="mt-2">
-			<Mail />
+			<Email />
 			{data.email}
 		</Button>
 	</div>

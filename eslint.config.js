@@ -30,5 +30,12 @@ export default ts.config(
 				parser: ts.parser
 			}
 		}
+	},
+	{
+		// Single-page portfolio: links are external URLs (or a trivial "/" home link),
+		// so SvelteKit's resolve() requirement does not apply here.
+		rules: {
+			'svelte/no-navigation-without-resolve': 'off'
+		}
 	}
 );

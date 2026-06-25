@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { resume as data } from '$lib/resume/resume';
-	import { Github, Linkedin, Twitter } from 'lucide-svelte';
+	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
+	import LogoLinkedin from 'carbon-icons-svelte/lib/LogoLinkedin.svelte';
+	import LogoX from 'carbon-icons-svelte/lib/LogoX.svelte';
 
 	const year = new Date().getFullYear();
 	const githubUsername = data.github.split('/').pop();
 
 	const socials = [
-		{ href: data.github, label: 'GitHub', icon: Github },
-		{ href: data.linkedin, label: 'LinkedIn', icon: Linkedin },
-		{ href: data.twitter, label: 'X', icon: Twitter }
+		{ href: data.github, label: 'GitHub', icon: LogoGithub },
+		{ href: data.linkedin, label: 'LinkedIn', icon: LogoLinkedin },
+		{ href: data.twitter, label: 'X', icon: LogoX }
 	];
 </script>
 
