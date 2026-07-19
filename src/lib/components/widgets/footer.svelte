@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resume as data } from '$lib/resume/resume';
+	import { cn } from '$lib/utils';
 	import LogoGithub from 'carbon-icons-svelte/lib/LogoGithub.svelte';
 	import LogoLinkedin from 'carbon-icons-svelte/lib/LogoLinkedin.svelte';
 	import LogoX from 'carbon-icons-svelte/lib/LogoX.svelte';
@@ -14,29 +15,33 @@
 	];
 </script>
 
-<footer class="border-border w-full border-t px-6">
-	<div class="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 py-10 sm:flex-row">
-		<p class="text-muted-foreground text-sm">
+<footer class={cn('border-border w-full border-t px-6')}>
+	<div
+		class={cn(
+			'mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 py-10 sm:flex-row'
+		)}
+	>
+		<p class={cn('text-muted-foreground text-sm')}>
 			&copy; {year}
 			{githubUsername}
 		</p>
-		<div class="flex items-center gap-5">
+		<div class={cn('flex items-center gap-5')}>
 			{#each socials as social (social.label)}
 				<a
 					href={social.href}
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label={social.label}
-					class="text-muted-foreground hover:text-foreground transition-colors"
+					class={cn('text-muted-foreground hover:text-foreground transition-colors')}
 				>
-					<social.icon class="size-5" />
+					<social.icon class={cn('size-5')} />
 				</a>
 			{/each}
 			<a
 				href="https://github.com/savioruz/savioruz.github.io"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-muted-foreground hover:text-foreground text-sm transition-colors"
+				class={cn('text-muted-foreground hover:text-foreground text-sm transition-colors')}
 			>
 				Source
 			</a>

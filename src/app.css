@@ -1,11 +1,12 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/inter';
+@import '@fontsource-variable/space-grotesk';
 
 @theme {
-	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-	--font-display: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--font-sans:
+		'Space Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-display: 'Space Grotesk Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-	/* Signature accent surfaces (full-bleed bands only, not wired into semantic tokens) */
+	/* Signature accent surfaces */
 	--color-signature-coral: #aa2d00;
 	--color-signature-coral-foreground: #ffffff;
 	--color-signature-forest: #0a2e0e;
@@ -17,24 +18,24 @@
 }
 
 :root {
-	--background: #ffffff;
+	--background: #fafaf9;
 	--foreground: #181d26;
-	--card: #ffffff;
+	--card: #fafaf9;
 	--card-foreground: #181d26;
-	--popover: #ffffff;
+	--popover: #fafaf9;
 	--popover-foreground: #181d26;
 	--primary: #181d26;
 	--primary-foreground: #ffffff;
 	--secondary: #f5f4f1;
 	--secondary-foreground: #181d26;
 	--muted: #f5f4f1;
-	--muted-foreground: #5b6168;
+	--muted-foreground: #6b7280;
 	--accent: #f5e9d4;
 	--accent-foreground: #181d26;
 	--destructive: #aa2d00;
 	--destructive-foreground: #ffffff;
-	--border: #e6e4df;
-	--input: #e6e4df;
+	--border: #e5e5e5;
+	--input: #e5e5e5;
 	--ring: #181d26;
 	--radius: 0.75rem;
 }
@@ -78,20 +79,18 @@
 	}
 }
 
-/* Single shared entrance animation, opt-in via .fade-up, motion-safe only. */
+/* Scroll reveal animation */
 @media (prefers-reduced-motion: no-preference) {
-	@keyframes fade-up {
-		from {
-			opacity: 0;
-			transform: translateY(12px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
+	.reveal {
+		opacity: 0;
+		transform: translateY(16px);
+		transition:
+			opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+			transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
-	.fade-up {
-		animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+	.reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

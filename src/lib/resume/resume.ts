@@ -36,7 +36,7 @@ export const resume: Resume = {
 	linkedin: 'https://www.linkedin.com/in/savioruz',
 	github: 'https://github.com/savioruz',
 	twitter: 'https://x.com/rill_blastmith',
-	url: 'https://s.id/resume-kheril',
+	url: 'https://docs.google.com/document/d/1PGnyunVErXI3bHKeEyw9UnSGwuqTeLLT/edit?usp=sharing&ouid=100999609840260151720&rtpof=true&sd=true',
 	summary:
 		"I mostly write Go, building APIs and the services behind them. When I'm not working, I'm usually messing with side projects or poking around Web3.",
 	projects,

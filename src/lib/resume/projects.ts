@@ -2,6 +2,12 @@ import type { Resume } from './resume';
 
 export const projects: Resume['projects'] = [
 	{
+		name: 'Go-ESPN-API',
+		description: 'A Go client for the ESPN public API, covering live scores and standings.',
+		tags: ['Go', 'REST API', 'Sports'],
+		href: 'https://github.com/savioruz/Go-ESPN-API'
+	},
+	{
 		name: 'Sheka',
 		description: 'A prediction market built on the Sui blockchain.',
 		tags: ['TypeScript', 'Sui', 'Web3', 'Move', 'Hono', 'SvelteKit'],
@@ -49,6 +55,12 @@ export const projects: Resume['projects'] = [
 		description: 'A code highlighting utility for Word documents.',
 		tags: ['SvelteKit', 'TypeScript'],
 		href: 'https://word-syntax-highlighter.vercel.app'
+	},
+	{
+		name: 'owi',
+		description: 'A database migration tool built with Swift.',
+		tags: ['Swift', 'Database', 'CLI'],
+		href: 'https://github.com/savioruz/owi'
 	},
 	{
 		name: 'TrinityKnights.Backend',
