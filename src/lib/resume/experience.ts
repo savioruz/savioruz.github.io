@@ -28,12 +28,12 @@ export const experience: Resume['experience'] = [
 		location: 'Yogyakarta',
 		period: 'Dec 2024 — Mar 2025',
 		description:
-			'Built asset-management APIs with the Laravel framework and developed secure endpoints.',
+			'Built asset-management (SIMAM) APIs with the Laravel framework and developed secure endpoints.',
 		tags: ['Laravel', 'PHP', 'REST API']
 	},
 	{
 		company: 'MIKTI',
-		role: 'Golang Developer - AI & Computer Vision',
+		role: 'Golang Developer',
 		type: 'Internship',
 		location: 'Indonesia',
 		period: 'Sep 2024 — Dec 2024',

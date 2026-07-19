@@ -8,7 +8,7 @@
 		variants: {
 			variant: {
 				default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-				outline: 'border-input text-foreground hover:bg-secondary border bg-background',
+				outline: 'border-input text-foreground hover:bg-secondary border bg-transparent',
 				secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
 				inverse: 'bg-background text-foreground hover:bg-background/90',
 				ghost: 'hover:bg-secondary',
