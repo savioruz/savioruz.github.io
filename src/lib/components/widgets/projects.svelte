@@ -8,7 +8,7 @@
 	const projects = data.projects;
 </script>
 
-<Section id="projects">
+<Section id="projects" tone="canvas">
 	<ScrollReveal>
 		<div class={cn('flex flex-col gap-8')}>
 			<h2 class={cn('font-display text-3xl font-semibold tracking-tight md:text-4xl')}>Projects</h2>
@@ -20,7 +20,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							class={cn(
-								'group border-border flex flex-col gap-2 rounded-lg border-t px-4 py-5 transition-colors',
+								'group border-border flex flex-col gap-2 rounded-lg border-t py-5 transition-colors',
 								'hover:bg-secondary/60 first:border-t-0',
 								'md:flex-row md:items-baseline md:justify-between md:gap-8'
 							)}

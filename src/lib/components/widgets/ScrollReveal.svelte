@@ -3,7 +3,7 @@
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
-	let el: HTMLElement;
+	let el: HTMLElement; // oxlint-disable-line no-unassigned-vars
 
 	onMount(() => {
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
