@@ -22,6 +22,9 @@
 				{data.summary}
 			</p>
 			<div class={cn('mt-3 flex flex-wrap items-center gap-3')}>
+				<Button href="/writing" variant="outline">
+					Writing
+				</Button>
 				<Button href={data.url} target="_blank" rel="noopener noreferrer">
 					<Document />
 					Resume
